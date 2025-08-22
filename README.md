@@ -7,7 +7,7 @@ A Features
 
 1. Collects farmer details, feedback topic, rating, and comments
 
-2.Saves responses locally in the browser using localStorage
+2. Saves responses locally in the browser using localStorage
 
 3. Export feedback data to a CSV file for offline review
 
