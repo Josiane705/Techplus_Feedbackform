@@ -1,0 +1,17 @@
+{
+  "name": "rental-app",
+  "version": "1.0.0",
+  "description": "Rwanda Wheels: Your Go-To Car Rental & Buying App Overview Rwanda Wheels is a comprehensive mobile application designed to connect car owners with individuals looking to rent or purchase vehicles for short periods. It offers a seamless platform for owners to list their cars and set their terms, while providing renters and buyers with an intuitive way to discover, select, and secure their desired vehicle.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}

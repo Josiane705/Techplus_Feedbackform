@@ -1,0 +1,171 @@
+/* Techplus Updated Color Scheme: Green, White, and Orange */
+      :root {
+          --techplus-green: #2E8B57;
+          --techplus-orange: #FF8C00;
+          --techplus-light: #F5F5F5;
+          --text-dark: #333333;
+          --text-light: #666666;
+          --border-light: #dddddd;
+      }
+
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: var(--text-dark);
+          background: linear-gradient(135deg, var(--techplus-light) 0%, #e6f4e6 100%);
+          margin: 0;
+          padding: 20px;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .feedback-container {
+          background: #fff;
+          padding: 2.5rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 600px;
+          border-top: 5px solid var(--techplus-green);
+      }
+
+      .header {
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+
+      h1 {
+          color: var(--techplus-green);
+          margin-bottom: 0.5rem;
+          font-size: 2rem;
+      }
+
+      .subtitle {
+          color: var(--text-light);
+          font-size: 1.1rem;
+      }
+
+      .form-group {
+          margin-bottom: 1.5rem;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          color: var(--text-dark);
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      select,
+      textarea {
+          width: 100%;
+          padding: 14px 16px;
+          border: 2px solid var(--border-light);
+          border-radius: 8px;
+          font-family: inherit;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+          outline: none;
+          border-color: var(--techplus-green);
+          box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+      }
+
+      textarea {
+          height: 130px;
+          resize: vertical;
+      }
+
+      button {
+          padding: 16px 24px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          width: 100%;
+          font-size: 1.1rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      button i {
+          margin-right: 8px;
+      }
+
+      button:active {
+          transform: scale(0.98);
+      }
+
+      #submitBtn {
+          background-color: var(--techplus-green);
+          color: white;
+      }
+      #submitBtn:hover {
+          background-color: #267349;
+          box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+      }
+
+      #downloadBtn {
+          background-color: var(--techplus-orange);
+          color: white;
+          margin-top: 1.5rem;
+      }
+      #downloadBtn:hover {
+          background-color: #e67e00;
+          box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+      }
+
+      .hidden {
+          display: none;
+      }
+
+      .required {
+          color: #ff4757;
+      }
+
+      .success-message {
+          text-align: center;
+          padding: 15px;
+          background-color: #f1fff7;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          border-left: 4px solid var(--techplus-green);
+      }
+
+      .footer {
+          text-align: center;
+          margin-top: 2rem;
+          color: var(--text-light);
+          font-size: 0.9rem;
+      }
+
+      @media (max-width: 650px) {
+          .feedback-container {
+              padding: 1.5rem;
+          }
+          
+          h1 {
+              font-size: 1.6rem;
+          }
+          
+          button {
+              padding: 14px 20px;
+          }
+      }

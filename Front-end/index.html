@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    </head>
+<body>
+  <div class="feedback-container">
+      <div class="header">
+          <h1><i class="fas fa-comments"></i> Techplus Farmer Feedback</h1>
+          <p class="subtitle">Your input helps us serve you better. Thank you for sharing your experience.</p>
+      </div>
+
+      <form id="feedbackForm">
+          <div class="form-group">
+              <label for="name">Your Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+              <label for="contact">Phone or Email <span class="required">*</span></label>
+              <input type="text" id="contact" name="contact" required placeholder="Enter your phone number or email">
+          </div>
+
+          <div class="form-group">
+              <label for="topic">What is your feedback regarding? <span class="required">*</span></label>
+              <select id="topic" name="topic" required>
+                  <option value="">-- Please select --</option>
+                  <option value="Incubators">Incubators</option>
+                  <option value="Chicks">Day-Old Chicks</option>
+                  <option value="Feed">Poultry Feed</option>
+                  <option value="Services">Customer Service</option>
+                  <option value="Other">Other</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="rating">How satisfied are you? <span class="required">*</span></label>
+              <select id="rating" name="rating" required>
+                  <option value="">-- Please select --</option>
+                  <option value="Very Satisfied">Very Satisfied</option>
+                  <option value="Satisfied">Satisfied</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Unsatisfied">Unsatisfied</option>
+                  <option value="Very Unsatisfied">Very Unsatisfied</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="message">Your Detailed Feedback <span class="required">*</span></label>
+              <textarea id="message" name="message" placeholder="Please tell us about your experience, suggestions, or any issues you faced..." required></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Submit Feedback
+          </button>
+      </form>
+
+      <div id="exportSection" class="hidden">
+          <div class="success-message">
+              <p><i class="fas fa-check-circle"></i> Thank you for your valuable feedback!</p>
+          </div>
+          <p style="text-align: center; color: var(--text-light); margin: 1rem 0;">You can now export the submitted data for review.</p>
+          <button id="downloadBtn">
+              <i class="fas fa-download"></i> Download Data as CSV
+          </button>
+      </div>
+
+      <div class="footer">
+          <p>Techplus Ltd &copy; 2023. Committed to serving farmers.</p>
+      </div>
+  </div>
+
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
