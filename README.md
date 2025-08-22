@@ -1,7 +1,7 @@
-Techplus Feedback Form
 
 Techplus Feedback Form is a simple web application for collecting feedback from farmers.
 It provides a user-friendly interface where farmers can share their experiences, rate services, and export the data for review.
+
 
 A Features
 
@@ -28,8 +28,9 @@ Techplus_Feedbackform/
 └── Techplus_Feedbackform/  # Feedback form HTML/CSS/JS files
 
 C. Getting Started
+
 1. Clone the repository
-git clone https://github.com/YOUR-USERNAME/Techplus_Feedbackform.git
+git clone https://github.com/Josiane705/Techplus_Feedbackform.git
 cd Techplus_Feedbackform
 
 2. Install dependencies (if using Node.js)
@@ -59,10 +60,13 @@ CSV files can be reviewed in Excel, Google Sheets, or any spreadsheet tool.
 
 E. Built With
 
-HTML5 – Structure
+1. git HTML5 – Structure
 
-CSS3 – Styling and responsiveness
+2. CSS3 – Styling and responsiveness
 
-JavaScript (Vanilla) – Form handling, localStorage, CSV export
+3. JavaScript (Vanilla) – Form handling, localStorage, CSV export
 
-Node.js – Dependency management and optional backend integration
+4. Node.js – Dependency management and optional backend integration
+
+5. Node.js project setup available for future backend integration
+
