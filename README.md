@@ -27,28 +27,8 @@ Techplus_Feedbackform/
 ├── README.md               # Project documentation
 └── Techplus_Feedbackform/  # Feedback form HTML/CSS/JS files
 
-C. Getting Started
 
-1. Clone the repository
-git clone https://github.com/Josiane705/Techplus_Feedbackform.git
-cd Techplus_Feedbackform
-
-2. Install dependencies (if using Node.js)
-npm install
-
-3. Run a local server
-
-You can use any local web server (e.g., VSCode Live Server, http-server, or Node.js/Express).
-Example with http-server:
-
-npx http-server Techplus_Feedbackform
-
-
-Then open your browser at:
-
-http://localhost:8080
-
-D. Usage
+C. Usage
 
 Fill out the feedback form with your name, contact, topic, rating, and message.
 
@@ -58,15 +38,4 @@ After submission, you’ll see an option to Download Data as CSV.
 
 CSV files can be reviewed in Excel, Google Sheets, or any spreadsheet tool.
 
-E. Built With
-
-1. git HTML5 – Structure
-
-2. CSS3 – Styling and responsiveness
-
-3. JavaScript (Vanilla) – Form handling, localStorage, CSV export
-
-4. Node.js – Dependency management and optional backend integration
-
-5. Node.js project setup available for future backend integration
 
