@@ -3,88 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Techplus Ltd - Farmer Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #234B13;
+            --light-green: #3a7424;
+            --lighter-green: #e9f5e6;
+            --grey-bg: #F5F5F5;
+            --white: #ffffff;
+            --light-grey: #e0e0e0;
+            --dark-grey: #333333;
+            --medium-grey: #666666;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--grey-bg);
+            color: var(--dark-grey);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin-right: 2rem;
+        }
+
+        .navbar a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(35, 75, 19, 0.9), rgba(35, 75, 19, 0.8)), url('https://images.unsplash.com/photo-1543848846-74b38c8f5b4f?ixlib=rb-4.0.3') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-grey);
+        }
+
+        .stat-card p {
+            color: var(--medium-grey);
+        }
+
+        .feedback-container {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--lighter-green);
+        }
+
+        .header h1 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--medium-grey);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-grey);
+        }
+
+        .required {
+            color: var(--primary-green);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(35, 75, 19, 0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        button:hover {
+            background: var(--light-green);
+            transform: translateY(-2px);
+        }
+
+        #submitBtn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        #downloadBtn {
+            background: var(--light-green);
+            margin: 0 auto;
+            display: block;
+        }
+
+        #downloadBtn:hover {
+            background: #2f5e1b;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-message {
+            background: var(--lighter-green);
+            color: var(--primary-green);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--medium-grey);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-grey);
+        }
+
+        .rating-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .rating-option {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .rating-option input[type="radio"] {
+            display: none;
+        }
+
+        .rating-option label {
+            display: block;
+            padding: 0.75rem;
+            text-align: center;
+            background: var(--lighter-green);
+            border: 1px solid var(--light-grey);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .rating-option input[type="radio"]:checked + label {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .navbar li {
+                margin-right: 0;
+            }
+            
+            .rating-options {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-   <!-- Navbar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Feedback Form</a></li>
-      <li><a href="documentation.html">Documentation</a></li>
-    </ul>
-  </nav>
-    </head>
-<body>
-  <div class="feedback-container">
-      <div class="header">
-          <h1><i class="fas fa-comments"></i> Techplus Farmer Feedback</h1>
-          <p class="subtitle">Your input helps us serve you better. Thank you for sharing your experience.</p>
-      </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" class="active">Feedback Form</a></li>
+        </ul>
+    </nav>
 
-      <form id="feedbackForm">
-          <div class="form-group">
-              <label for="name">Your Name <span class="required">*</span></label>
-              <input type="text" id="name" name="name" required placeholder="Enter your full name">
-          </div>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Techplus Farmer Feedback Portal</h1>
+            <p>Your opinion matters! Help us improve our products and services by sharing your experience.</p>
+        </div>
 
-          <div class="form-group">
-              <label for="contact">Phone or Email <span class="required">*</span></label>
-              <input type="text" id="contact" name="contact" required placeholder="Enter your phone number or email">
-          </div>
+        <!-- Feedback Form -->
+        <div class="feedback-container">
+            <div class="header">
+                <h1><i class="fas fa-comments"></i> Share Your Experience</h1>
+                <p class="subtitle">Your input helps us serve you better. Thank you for sharing your experience.</p>
+            </div>
 
-          <div class="form-group">
-              <label for="topic">What is your feedback regarding? <span class="required">*</span></label>
-              <select id="topic" name="topic" required>
-                  <option value="">-- Please select --</option>
-                  <option value="Incubators">Incubators</option>
-                  <option value="Chicks">Day-Old Chicks</option>
-                  <option value="Feed">Poultry Feed</option>
-                  <option value="Services">Customer Service</option>
-                  <option value="Other">Other</option>
-              </select>
-          </div>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Your Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
 
-          <div class="form-group">
-              <label for="rating">How satisfied are you? <span class="required">*</span></label>
-              <select id="rating" name="rating" required>
-                  <option value="">-- Please select --</option>
-                  <option value="Very Satisfied">Very Satisfied</option>
-                  <option value="Satisfied">Satisfied</option>
-                  <option value="Neutral">Neutral</option>
-                  <option value="Unsatisfied">Unsatisfied</option>
-                  <option value="Very Unsatisfied">Very Unsatisfied</option>
-              </select>
-          </div>
+                <div class="form-group">
+                    <label for="contact">Phone or Email <span class="required">*</span></label>
+                    <input type="text" id="contact" name="contact" required placeholder="Enter your phone number or email">
+                </div>
 
-          <div class="form-group">
-              <label for="message">Your Detailed Feedback <span class="required">*</span></label>
-              <textarea id="message" name="message" placeholder="Please tell us about your experience, suggestions, or any issues you faced..." required></textarea>
-          </div>
+                <div class="form-group">
+                    <label for="topic">What is your feedback regarding? <span class="required">*</span></label>
+                    <select id="topic" name="topic" required>
+                        <option value="">-- Please select --</option>
+                        <option value="Incubators">Incubators</option>
+                        <option value="Chicks">Day-Old Chicks</option>
+                        <option value="Feed">Poultry Feed</option>
+                        <option value="Services">Customer Service</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
 
-          <button type="submit" id="submitBtn">
-              <i class="fas fa-paper-plane"></i> Submit Feedback
-          </button>
-      </form>
+                <div class="form-group">
+                    <label>How satisfied are you? <span class="required">*</span></label>
+                    <div class="rating-options">
+                        <div class="rating-option">
+                            <input type="radio" id="very-satisfied" name="rating" value="Very Satisfied" required>
+                            <label for="very-satisfied">Very Satisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="satisfied" name="rating" value="Satisfied">
+                            <label for="satisfied">Satisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="neutral" name="rating" value="Neutral">
+                            <label for="neutral">Neutral</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="unsatisfied" name="rating" value="Unsatisfied">
+                            <label for="unsatisfied">Unsatisfied</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="very-unsatisfied" name="rating" value="Very Unsatisfied">
+                            <label for="very-unsatisfied">Very Unsatisfied</label>
+                        </div>
+                    </div>
+                </div>
 
-      <div id="exportSection" class="hidden">
-          <div class="success-message">
-              <p><i class="fas fa-check-circle"></i> Thank you for your valuable feedback!</p>
-          </div>
-          <p style="text-align: center; color: var(--text-light); margin: 1rem 0;">You can now export the submitted data for review.</p>
-          <button id="downloadBtn">
-              <i class="fas fa-download"></i> Download Data as CSV
-          </button>
-      </div>
+                <div class="form-group">
+                    <label for="message">Your Detailed Feedback <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Please tell us about your experience, suggestions, or any issues you faced..." required></textarea>
+                </div>
 
-      <div class="footer">
-          <p>Techplus Ltd &copy; 2023. Committed to serving farmers.</p>
-      </div>
-  </div>
+                <button type="submit" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+            </form>
 
-  <!-- Link to external JS -->
-  <script src="script.js"></script>
-</body>
-</html>
+            <div id="exportSection" class="hidden">
+                <div class="success-message">
+                    <p><i class="fas fa-check-circle"></i> Thank you for your valuable feedback!</p>
+                </div>
+                <p style="text-align: center; color: var(--medium-grey); margin: 1rem 0;">You can now export the submitted data for review.</p>
+                <button id="downloadBtn">
+                    <i class="fas fa-download"></i> Download Data as CSV
+                </button>
+            </div>
+
+            <div class="footer">
+                <p>Techplus Ltd &copy; 2023. Committed to serving farmers.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('feedbackForm');
+            const exportSection = document.getElementById('exportSection');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            let formData = {};
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                formData = {
+                    name: document.getElementById('name').value,
+                    contact: document.getElementById('contact').value,
+                    topic: document.getElementById('topic').value,
+                    rating: document.querySelector('input[name="rating"]:checked').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toLocaleString()
+                };
+                
+                // In a real application, you would send this data to a server
+                // For this example, we'll just show the success message
+                
+                // Hide form and show export section
+                form.style.display = 'none';
+                exportSection.classList.remove('hidden');
+                
+                // Scroll to export section
+                exportSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            downloadBtn.addEventListener('click', function() {
+                // Convert formData to CSV format
+                const csvContent = "data:text/csv;charset=utf-8," 
+                    + "Name,Contact,Topic,Rating,Message,Timestamp\n"
+                    + `"${formData.name}","${formData.contact}","${formData.topic}","${formData.rating}","${formData.message}","${formData.timestamp}"`;
+                
+                // Create download link
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "techplus_feedback.csv");
+                document.body.appendChild(link);
+                
+                // Trigger download
+                link.click();
+            });
+        });
+    </script>
 </body>
 </html>
